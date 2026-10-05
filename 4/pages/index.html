@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API de alumnos</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <header class="barra-superior">
+    <div>
+      <h1>API de alumnos</h1>
+      <p>Ejercicio 4 · API propia con Node.js y Express</p>
+    </div>
+    <div class="barra-acciones">
+      <a class="enlace-api" href="/api/alumnos" target="_blank">Ver JSON de la API</a>
+      <button id="btnTema" class="tema">Modo oscuro</button>
+    </div>
+  </header>
+
+  <main class="pagina">
+      <section class="panel">
+        <h2 id="tituloFormulario">Agregar alumno</h2>
+        <form id="formulario" novalidate>
+          <label for="inputNombre">Nombre</label>
+          <input type="text" id="inputNombre" placeholder="Ej: Ana Pérez">
+          <label for="inputEmail">Email</label>
+          <input type="email" id="inputEmail" placeholder="ana@correo.com">
+        <label for="inputCurso">Curso</label>
+        <input type="text" id="inputCurso" placeholder="Ej: Programación I">
+          <p id="errorForm" class="error-form"></p>
+          <div class="acciones">
+            <button type="submit" id="btnGuardar">Agregar</button>
+            <button type="button" id="btnCancelarEdicion" class="secundario oculto">Cancelar edición</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="encabezado-lista">
+          <h2>Alumnos</h2>
+          <button id="btnBorrarTodos" class="peligro" disabled>Eliminar todos</button>
+        </div>
+        <p id="infoLista" class="info"></p>
+        <div id="lista" class="lista"></div>
+      </section>
+  </main>
+
+  <div id="modal" class="modal-fondo oculto" role="dialog" aria-modal="true">
+    <div class="modal">
+      <h3>Confirmar eliminación</h3>
+      <p id="modalTexto"></p>
+      <div class="acciones">
+        <button id="btnCancelarBorrado" class="secundario">Cancelar</button>
+        <button id="btnConfirmarBorrado" class="peligro">Eliminar</button>
+      </div>
+    </div>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="/modules/script.js"></script>
+</body>
+</html>

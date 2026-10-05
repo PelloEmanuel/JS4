@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulario con POST</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <header class="barra-superior">
+    <div>
+      <h1>Formulario con POST</h1>
+      <p>Ejercicio 2 · Enviar datos a una API</p>
+    </div>
+    <div class="barra-acciones">
+      <button id="btnTema" class="tema">Modo oscuro</button>
+    </div>
+  </header>
+
+  <main class="pagina">
+      <section class="panel">
+        <h2>Nuevo usuario</h2>
+        <form id="formulario" novalidate>
+          <label for="inputNombre">Nombre</label>
+          <input type="text" id="inputNombre" placeholder="Ej: Ana Pérez">
+          <label for="inputEmail">Email</label>
+          <input type="email" id="inputEmail" placeholder="ana@correo.com">
+          <label for="selectMetodo">Enviar con</label>
+          <select id="selectMetodo">
+            <option value="axios">axios.post()</option>
+            <option value="fetch">fetch con método POST</option>
+          </select>
+          <p id="errorForm" class="error-form"></p>
+          <div class="acciones">
+            <button type="submit" id="btnEnviar">Enviar</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Respuesta de la API</h2>
+        <p id="sinRespuesta" class="info">Todavía no enviaste ningún formulario.</p>
+        <div id="respuesta" class="oculto">
+          <p class="info">ID devuelto por la API</p>
+          <p id="idRespuesta" class="id-grande"></p>
+          <dl class="datos-respuesta">
+            <dt>Nombre</dt><dd id="datoNombre"></dd>
+            <dt>Email</dt><dd id="datoEmail"></dd>
+            <dt>Método</dt><dd id="datoMetodo"></dd>
+            <dt>Estado HTTP</dt><dd id="datoEstado"></dd>
+          </dl>
+          <p class="nota">JSONPlaceholder es una API de prueba: devuelve un ID pero no guarda realmente los datos.</p>
+        </div>
+      </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="/libs/axios.min.js"></script>
+  <script src="/modules/script.js"></script>
+</body>
+</html>
